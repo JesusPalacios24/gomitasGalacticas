@@ -26,7 +26,7 @@ let exoplanets = [
   {
     id: 2,
     image:
-      "https://th.bing.com/th/id/R.0a375cff18d2bee68f113e933257f693?rik=OYtoBYWSdIbnoA&pid=ImgRaw&r=0",
+      "/51Pegasib.png",
     clasification: "clasificacion",
     name: "Exoplaneta ur mom",
     description:

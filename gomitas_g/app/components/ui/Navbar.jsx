@@ -3,7 +3,7 @@ import {Button} from "@nextui-org/react";
 
 export default function Navbar() {
   return (
-    <div className="flex justify-between items-center px-24 py-6 text-lg bg--500">
+    <div className="relative flex justify-between items-center px-24 py-6 text-lg z-20">
       <div>Logo</div>
 
       {/* links */}
@@ -13,7 +13,7 @@ export default function Navbar() {
         <a href="#">tyuiop</a>
         <Button className="text-white hover:text-black rounded-full px-8"  variant="ghost">
         Login
-      </Button>  
+      </Button>   
       </div>
     </div>
   );

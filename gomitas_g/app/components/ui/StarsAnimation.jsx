@@ -29,11 +29,11 @@ const StarBackground = (props) => {
         />
       </Points>
     </group>
-  );
+  ); 
 };
 
 const StarsCanvas = () => (
-  <div className="w-full h-auto fixed inset-0 z-[20]">
+  <div className="w-full h-auto fixed inset-0 z-[30]">
     <Canvas camera={{ position: [0, 0, 1] }}>
       <Suspense fallback={null}>
         <StarBackground />

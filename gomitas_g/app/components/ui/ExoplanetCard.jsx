@@ -7,7 +7,7 @@ import { Card, CardFooter, Image, Button } from "@nextui-org/react";
 
 import { FaArrowRightLong } from "react-icons/fa6";
 
-export default function ExoplanetCard({ data }) {
+export default function ExoplanetCard({ data }) { 
   const [animation, setAnimation] = useState("");
   return (
     <div
@@ -25,7 +25,7 @@ export default function ExoplanetCard({ data }) {
             alt="Woman listing to music"
             className="object-cover w-full"
             // isZoomed
-            height={230}
+            height={270}
             src={data.image}
             width={270}
           />
