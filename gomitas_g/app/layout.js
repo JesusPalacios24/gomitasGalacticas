@@ -2,6 +2,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 import Navbar from "./components/ui/Navbar";
+import StarsAnimation from "./components/ui/StarsAnimation";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,8 +27,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#1c1b1d]`}
       >
+        <StarsAnimation></StarsAnimation>
+        <div className="z-30 relative">
         <Navbar></Navbar>
         {children}
+        </div>
       </body>
     </html>
   );

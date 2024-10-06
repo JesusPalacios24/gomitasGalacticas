@@ -1,6 +1,8 @@
 import React from "react";
 import ExoplanetCard from "../components/ui/ExoplanetCard";
 
+
+
 import { Checkbox, Input } from "@nextui-org/react";
 
 import { Button } from "@nextui-org/button";
@@ -86,6 +88,7 @@ let exoplanets = [
 export default function page() {
   return (
     <div className="flex flex-col gap-12">
+      
       <h1 className="font-semibold text-[36px] text-center mr-10">Exoplanets</h1>
 
       <Input
