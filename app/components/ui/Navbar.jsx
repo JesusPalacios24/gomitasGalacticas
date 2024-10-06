@@ -46,19 +46,19 @@ export default function Navbar() {
 
         {/* links */}
         <div className="flex gap-10">
-          <a href="#" className={isScrolled ? "text-white" : "text-white"}>
+          <a href="/" className={isScrolled ? "text-white" : "text-white"}>
             Home
           </a>
-          <a href="#" className={isScrolled ? "text-white" : "text-white"}>
+          <a href="" className={isScrolled ? "text-white" : "text-white"}>
             Introduction
           </a>
-          <a href="#" className={isScrolled ? "text-white" : "text-white"}>
+          <a href="/exoplanets" className={isScrolled ? "text-white" : "text-white"}>
             Content
           </a>
-          <a href="#" className={isScrolled ? "text-white" : "text-white"}>
+          <a href="/education" className={isScrolled ? "text-white" : "text-white"}>
             Education
           </a>
-          <a href="#" className={isScrolled ? "text-white" : "text-white"}>
+          <a href="/research" className={isScrolled ? "text-white" : "text-white"}>
             Research
           </a>
           <Button
@@ -66,6 +66,7 @@ export default function Navbar() {
               isScrolled ? "text-white hover:text-white" : "text-white"
             }`}
             variant="ghost"
+            onClick={() => window.location.href = '/login'} // Redirige a la página de login
           >
             Login
           </Button>
