@@ -68,7 +68,7 @@ export default function Body() {
         </div>
       </div>
 
-      <div className="h-screen w-full py-[160px]">
+      <div className="h-screen w-full py-[160px] my-[100px]">
         {" "}
         {/* Segunda división: 3 bloques con imagen e info */}
         <div className="text-center mb-[70px]">
@@ -95,31 +95,32 @@ export default function Body() {
       </div>
 
       {/* Tercera división: Begin your journey outside our Solar System! */}
-      <div className="text-center m-5">
-        <h1 className="text-h3">
-          Begin your journey outside our Solar System!
-        </h1>
-        <p className="m-3">
-          Get started with your knowledge about Exo-Planets now with our
-          Collection about <br /> Exo-Planets serched from confident sources.
-        </p>
-        <div className="flex justify-center m-4">
-          <ButtonStarted />
+      <div className="h-screen my-[100px]">
+        <div className="text-center m-5 space-y-5">
+          <h1 className="text-h2">
+            Begin your journey outside our Solar System!
+          </h1>
+          <p className="m-3 text-h6">
+            Get started with your knowledge about Exo-Planets now with our
+            Collection about <br /> Exo-Planets serched from confident sources.
+          </p>
+          <div className="flex justify-center m-4">
+            <ButtonStarted />
+          </div>
+        </div>
+        <div className="flex justify-between mb-8">
+          {inicio.map(
+            (
+              inicio,
+              index // Agregado 'index' como segundo argumento
+            ) => (
+              <div key={index} className="w-1/3 flex flex-col items-center m-4">
+                <img src={inicio.img} alt="ESO" />
+              </div>
+            )
+          )}
         </div>
       </div>
-      <div className="flex justify-between mb-8">
-        {inicio.map(
-          (
-            inicio,
-            index // Agregado 'index' como segundo argumento
-          ) => (
-            <div key={index} className="w-1/3 flex flex-col items-center m-4">
-              <img src={inicio.img} alt="ESO" />
-            </div>
-          )
-        )}
-      </div>
-
       {/*Cuarta división: Go search any Exo-Planet your curious about!*/}
       <div className="flex">
         {exoplanetas.map(

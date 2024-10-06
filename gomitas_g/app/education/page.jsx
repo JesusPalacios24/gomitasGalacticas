@@ -43,6 +43,7 @@ const EducationPage = () => {
           objectFit="cover"
           quality={100}
         />
+        <div className="absolute h-10 w-full bg-nasa-black to-transparent" />
       </div>
 
       {/* Contenido principal */}
