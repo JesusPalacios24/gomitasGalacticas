@@ -5,6 +5,7 @@ import { Image } from "@nextui-org/react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para manejar el menú en móviles
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,42 +28,69 @@ export default function Navbar() {
       }`}
     >
       <div
-        className={`relative flex justify-between items-center px-24  text-lg transition-all duration-500 ease-in-out ${
+        className={`relative flex justify-between items-center px-6 md:px-24 text-lg transition-all duration-500 ease-in-out ${
           isScrolled ? "py-2" : "py-6"
         }`}
       >
-        <div className="relative ">
+        <div className="relative">
           <a href="/" className={`absolute top-[-70px] ${isScrolled ? "text-white" : "text-white"}`}>
             <Image
-              //   isZoomed
               width={110}
               height={110}
-              className="object-cover ml-24"
-              // alt="NextUI Fruit Image with Zoom"
+              className="object-cover"
               src="/logo.png"
             />
           </a>
         </div>
 
-        {/* links */}
-        <div className="flex gap-10">
-          <a href="#" className={isScrolled ? "text-white" : "text-white"}>
+        {/* Botón de menú para móviles */}
+        <div className="md:hidden">
+          <button
+            className="text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            ☰ {/* Icono de hamburguesa */}
+          </button>
+        </div>
+
+        {/* Links del menú, ocultos en móviles y mostrados en pantallas más grandes */}
+        <div
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } absolute top-full left-0 w-full bg-black bg-opacity-80 md:bg-transparent md:static md:w-auto md:flex gap-10 md:gap-10 transition-all duration-300 md:items-center`}
+        >
+          <a
+            href="#"
+            className={`block md:inline-block px-4 py-2 ${isScrolled ? "text-white" : "text-white"}`}
+          >
             Home
           </a>
-          <a href="#" className={isScrolled ? "text-white" : "text-white"}>
+          <a
+            href="#"
+            className={`block md:inline-block px-4 py-2 ${isScrolled ? "text-white" : "text-white"}`}
+          >
             Introduction
           </a>
-          <a href="#" className={isScrolled ? "text-white" : "text-white"}>
+          <a
+            href="#"
+            className={`block md:inline-block px-4 py-2 ${isScrolled ? "text-white" : "text-white"}`}
+          >
             Content
           </a>
-          <a href="#" className={isScrolled ? "text-white" : "text-white"}>
+          <a
+            href="#"
+            className={`block md:inline-block px-4 py-2 ${isScrolled ? "text-white" : "text-white"}`}
+          >
             Education
           </a>
-          <a href="#" className={isScrolled ? "text-white" : "text-white"}>
+          <a
+            href="#"
+            className={`block md:inline-block px-4 py-2 ${isScrolled ? "text-white" : "text-white"}`}
+          >
             Research
           </a>
           <Button
-            className={`rounded-full px-8 ${
+            className={`rounded-full px-8 block md:inline-block ${
               isScrolled ? "text-white hover:text-white" : "text-white"
             }`}
             variant="ghost"
