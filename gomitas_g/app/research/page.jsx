@@ -26,7 +26,7 @@ let exoplanets = [
     id: 3,
     image:
       "https://th.bing.com/th/id/OIP.jryuUgIHWL-1FVD2ww8oWgHaHa?rs=1&pid=ImgDetMain",
-    name: "Juan",
+    name: "Juana",
     age: 43,
     description: "tfghjkl[;]gfds",
   },
