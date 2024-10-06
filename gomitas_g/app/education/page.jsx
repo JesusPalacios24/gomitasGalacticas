@@ -3,28 +3,32 @@ import React from 'react'
 const plans=[
     {
         name:"Elementary School",
-        benefits:"",
+        benefits:[
+          "Benefit 1", 
+          "Benefit 2", 
+          "Benefit 3",
+        ],
     },    {
         name:"High School",
-        benefits:"",
+        benefits:[
+          "Benefit 1", 
+          "Benefit 2", 
+          "Benefit 3",
+        ],
     },    {
         name:"University",
-        benefits:"",
+        benefits:[
+          "Benefit 1", 
+          "Benefit 2", 
+          "Benefit 3",
+        ],
     }
 ]
 
 export default function page() {
   return (
-    <div className="flex flex-col">
-      <div className="">
-        <h1 className="text-[40px] font-bold">Pricing</h1>
-      </div>
-      <div className="">
-        <div className="flex flex-row">
-
-
-        </div>
-      </div>
+    <div>
+      Hola
     </div>
-  )
+  );
 }

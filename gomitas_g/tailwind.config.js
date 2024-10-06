@@ -26,7 +26,7 @@ module.exports = {
       'p': '16px',  
       'small-1': '12.8px', 
       'small-2': '10.24px',   
-    }
+    } 
   },
   darkMode: "class", 
   plugins: [nextui()],
