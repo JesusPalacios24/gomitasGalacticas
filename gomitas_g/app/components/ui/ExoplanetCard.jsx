@@ -9,7 +9,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function ExoplanetCard({ data,investigator=false }) { 
   const [animation, setAnimation] = useState("");
-  return (
+  return ( 
     <div
       className="relative flex flex-col gap-0 w-[270px]  "
       onMouseEnter={() =>

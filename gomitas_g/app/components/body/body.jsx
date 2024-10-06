@@ -1,6 +1,10 @@
 import React from "react";
 import ButtonStarted from "../ui/ButtonStarted";
-import Image from "next/image";
+import { Image } from "@nextui-org/react";
+
+import { FaArrowRightLong } from "react-icons/fa6";
+
+import { Button } from "@nextui-org/react";
 
 import { TfiWrite } from "react-icons/tfi";
 import { MdOutlineSchool } from "react-icons/md";
@@ -30,8 +34,8 @@ const inicio = [
 ];
 
 const startedLanding = [
-  { img: "/Started-BG.jpg"}, 
-  { img: "/Started-BG2.jpg"}, 
+  { img: "/Started-BG.jpg" },
+  { img: "/Started-BG2.jpg" },
   { img: "/image1.jpg" },
 ];
 
@@ -40,7 +44,7 @@ const exoplanetas = [
     titEx: "Go search any Exo-Planet your curious about!",
     textEx:
       "Start searching in our Content page so you can get the information about the Exo-Planets you’re more interested.",
-    butoon: <ButtonStarted />,
+    butoon: <ButtonGetStarted />,
   },
 ];
 
@@ -49,7 +53,7 @@ const researchers = [
     titRe: "Start sharing your knowledge with other people!",
     textRe:
       "The people with more knowledge in the topic can share their knowledge with others. So don’t stop learning, you can teach too!",
-    butoon: <ButtonStarted />,
+    butoon: <ButtonGetStarted />,
   },
 ];
 
@@ -70,16 +74,20 @@ export default function Body() {
             <h2 className="text-h2 text-left">
               Explore the space beyond our world with <br /> Official NASA data
             </h2>
-            <p className="m-4 text-h6 text-left text-zinc-300 font-thin">Official NASA Data on Exo-Planets</p>
+            <p className="m-4 text-h6 text-left text-zinc-300 font-thin">
+              Official NASA Data on Exo-Planets
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="h-screen w-full  my-[120px]">
+      <div className="h-screen w-full  mt-[120px] ">
         {" "}
         {/* Segunda división: 3 bloques con imagen e info */}
         <div className="text-center mb-[70px]">
-          <h1 className="text-h3 font-thin">Fast... Accurate... Accesible...</h1>
+          <h1 className="text-h3 font-thin">
+            Fast... Accurate... Accesible...
+          </h1>
         </div>
         <div className="flex justify-between w-[70%] mx-auto ">
           {problemas.map(
@@ -102,77 +110,111 @@ export default function Body() {
       </div>
 
       {/* Tercera división: Begin your journey outside our Solar System! */}
-      <div className="h-screen my-[100px]">
-        <div className="text-center m-5 space-y-5">
+      <div className="h-screen ">
+        <div className="text-center pt-14  w-[60%] mx-auto">
           <h1 className="text-h2">
             Begin your journey outside our Solar System!
           </h1>
-          <p className="m-3 text-h6">
+          <p className="mt-12 text-[18px] font-thin ">
             Get started with your knowledge about Exo-Planets now with our
             Collection about <br /> Exo-Planets serched from confident sources.
           </p>
           <div className="flex justify-center m-4 p-5">
-            <ButtonStarted />
+            {/* <ButtonStarted /> */}
+            <ButtonGetStarted />
           </div>
         </div>
-        <div className="flex mb-8">
+
+        <div className="flex flex-row w-[55%] mx-auto mt-12 mb-8 justify-between ">
           {startedLanding.map(
             (
               inicio,
               index // Agregado 'index' como segundo argumento
             ) => (
-              <div key={index} className="w-1/3 flex flex-col items-center">
-                <Image className="rounded-lg" src={inicio.img} alt="ESO" width={300} height={300}/>
+              <div key={index} className="">
+                <Image
+                  isZoomed
+                  width={240}
+                  height={240}
+                  alt="NextUI Fruit Image with Zoom"
+                  src={inicio.img}
+                />
               </div>
             )
           )}
         </div>
       </div>
-      {/*Cuarta división: Go search any Exo-Planet your curious about!*/}
-      <div className="flex">
-        {exoplanetas.map(
-          (
-            exop,
-            index // Agregado 'index' como segundo argumento 
-          ) => (
-            <div key={index} className="w-[50%] justify-center m-4 ">
-              <h3 className="flex justify-center m-4 text-h3">{exop.titEx}</h3>
-              <p className="flex justify-center m-4">{exop.textEx}</p>
-              <div className="m-8 flex justify-center">
-                <ButtonStarted />
+
+      <div className=" flex flex-row justify-center h-screen pt-[100px]">
+        {/*Cuarta división: Go search any Exo-Planet your curious about!*/}
+        <div className="w-[45%] ">
+          {exoplanetas.map(
+            (
+              exop,
+              index // Agregado 'index' como segundo argumento
+            ) => (
+              <div key={index} className=" justify-center m-4 ">
+                <h3 className="flex justify-center m-4 text-h3">
+                  {exop.titEx}
+                </h3>
+                <p className="flex justify-center m-4">{exop.textEx}</p>
+                <div className="m-8 flex justify-center">
+                  <ButtonGetStarted />
+                </div>
               </div>
-            </div>
-          )
-        )}
-        <img
-          src="/image1.jpg"
-          alt="EESO"
-          className="w-[50%] flex justify-center m-4"
+            )
+          )}
+        </div>
+        <Image
+          isZoomed
+          width={400}
+          height={400}
+          className="object-cover"
+          alt="NextUI Fruit Image with Zoom"
+          src="https://wallpapercave.com/wp/wp4448015.jpg"
         />
       </div>
 
       {/*Quinta división: Start sharing your knowledge with other people!*/}
-      <div className="flex">
-        <img
-          src="/image1.jpg"
-          alt="EESO"
-          className="w-[50%] flex justify-center m-4"
+      <div className="flex flex-row justify-center h-screen pt-[60px]">
+        <Image
+        //   isZoomed
+          width={600}
+          height={600}
+          className="object-cover ml-24"
+          alt="NextUI Fruit Image with Zoom"
+          src="https://wallpapercave.com/wp/wp5971175.jpg"
         />
-        {researchers.map(
-          (
-            rese,
-            index // Agregado 'index' como segundo argumento
-          ) => (
-            <div key={index} className="w-[50%] justify-center m-4 ">
-              <h1 className="m-4 text-h3">{rese.titRe}</h1>
-              <p className="m-4">{rese.textRe}</p>
-              <div className="m-5 flex justify-center">
-                <ButtonStarted />
+        <div className="w-[70%] ml-24">
+          {researchers.map(
+            (
+              rese,
+              index // Agregado 'index' como segundo argumento
+            ) => (
+              <div key={index} className="w-[50%] justify-center m-4 ">
+                <h1 className="m-4 text-h3">{rese.titRe}</h1>
+                <p className="m-4 font-thin">{rese.textRe}</p>
+                <div className="m-5 flex justify-center">
+                  <ButtonGetStarted />
+                </div>
               </div>
-            </div>
-          )
-        )}
+            )
+          )}
+        </div>
       </div>
     </div>
+  );
+}
+
+function ButtonGetStarted() {
+  return (
+    <>
+      <Button
+        className="text-[16px] py-[22px]  rounded-full px-24"
+        variant="faded"
+      >
+        Get Started <FaArrowRightLong className="inline mt-[3px] ml-1" />
+      </Button>
+    </>
   );
 }
