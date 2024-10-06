@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo y texto */}
         <div className="text-left">
-          <h3 className="text-h3 font-thin">Explore the Universe</h3>
+          <h3 className="text-h3 font-thin">ExoFinder</h3>
           {/* Pie de página con derechos reservados */}
           <div className="text-zinc-500 text-xs mt-2">
             &copy; 2024 Space Exploration Co. All Rights Reserved.
