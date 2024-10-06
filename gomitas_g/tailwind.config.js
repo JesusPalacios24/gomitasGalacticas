@@ -13,7 +13,9 @@ module.exports = {
     extend: {
       colors: {
         background: "var(--background)",
-        foreground: "var(--foreground)",
+        foreground: "var(--foreground)", 
+        'nasa-black': "#171616", 
+        'nasa-white': "#DDDDDD", 
       },
     }, 
     fontSize: {
