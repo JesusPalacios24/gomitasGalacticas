@@ -4,7 +4,7 @@ import {Button} from "@nextui-org/react";
 export default function Navbar() {
   return (
     <div className="relative flex justify-between items-center px-24 py-6 text-lg z-20">
-      <div>Logo</div>
+      <div><a href="/">Logo</a></div>
 
       {/* links */}
       <div className="flex gap-10 text-white">

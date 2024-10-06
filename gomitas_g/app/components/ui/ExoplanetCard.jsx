@@ -7,7 +7,7 @@ import { Card, CardFooter, Image, Button } from "@nextui-org/react";
 
 import { FaArrowRightLong } from "react-icons/fa6";
 
-export default function ExoplanetCard({ data }) { 
+export default function ExoplanetCard({ data,investigator=false }) { 
   const [animation, setAnimation] = useState("");
   return (
     <div
@@ -19,7 +19,7 @@ export default function ExoplanetCard({ data }) {
         setAnimation("transition-all duration-500 ease-in-out h-10")
       }
     >
-      <a href={`/exoplanets/${data.id}`} className="">
+      <a href={investigator? "#": `/exoplanets/${data.id}`} className="">
         <Card isFooterBlurred radius="lg" className="border-none ">
           <Image
             alt="Woman listing to music"
@@ -30,10 +30,10 @@ export default function ExoplanetCard({ data }) {
             width={270}
           />
           <CardFooter
-            className={`before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10 h-10  ${animation} flex-col`}
+            className={`before:bg-white/10 bg-zinc-800 bg-opacity-40 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10 h-10  ${animation} flex-col`}
           >
             <div className="flex flex-row justify-between w-full">
-              <p className="mt-1 text-sm text-white/80">{data.name}</p>
+              <p className="mt-1 text-sm text-white/80">{data.name} {investigator&&(<span className="ml-2">{data.age}</span>)}</p>
               <Button
                 className="text-tiny text-white bg-black/20 "
                 variant="flat"
