@@ -50,7 +50,7 @@ export default function Page() {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
-      <div className="flex flex-row justify-between mx-32">
+      <div className="flex flex-row justify-between mx-32 pb-32">
         <div className="flex flex-col gap-3 bg-white text-black h-full px-20 py-14 rounded-[40px]">
           <p className="font-semibold text-center text-lg">Filters</p>
 
@@ -100,6 +100,8 @@ export default function Page() {
         </div>
 
         <div className="grid grid-cols-3 gap-x-8 gap-y-12">
+          {filteredExoplanets.length ===0&&(<p className="">No exoplanets found</p>)}
+
           {filteredExoplanets.map((exoplanet) => (
             <ExoplanetCard data={exoplanet} key={exoplanet.name} />
           ))}

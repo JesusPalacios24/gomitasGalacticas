@@ -108,7 +108,7 @@ function ShowData({ data }) {
       <span className="text-center text-[22px] font-light">
         {data.icon} {data.description}
       </span>
-      <span className="text-center text-[16px] font-light">{data.data}</span>
+      <span className="text-center text-[16px] text-zinc-400 font-light">{data.data}</span>
     </li>
   );
 }
