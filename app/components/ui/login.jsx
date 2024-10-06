@@ -25,6 +25,7 @@ export default function Login() {
     // Verifica si el usuario existe y las credenciales son correctas
     if (user) {
       alert("Successful login");
+      window.location.href = '/'; // Redirige al home después de iniciar sesión
     } else {
       setError("Incorrect username or password");
     }
