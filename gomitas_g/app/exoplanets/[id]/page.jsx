@@ -11,11 +11,10 @@ import {
   IoSearch,
 } from "react-icons/io5";
 import { MdDateRange } from "react-icons/md";
-import { TbWeight } from "react-icons/tb";
+import { TbWeight, TbArrowCurveLeft } from "react-icons/tb";
 import { LuOrbit } from "react-icons/lu";
-import { TbArrowCurveLeft } from "react-icons/tb";
 
-export default function page() {
+export default function Page() {
   let exoplanet = {
     id: 1,
     image:
@@ -23,7 +22,7 @@ export default function page() {
     clasification: "clasificacion",
     nombre: "Exoplaneta ur mom",
     description:
-      "texto de exoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipkl",
+      "texto de exoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipkl",
     planet_radius: "1.27 x Jupiter (estimate)",
     planet_type: "Gas Giant",
     discovery_method: "Radial Velocity",
@@ -34,8 +33,46 @@ export default function page() {
     eccentricity: 0.01,
   };
 
+  const dataToShow = [
+    {
+      icon: <IoPlanetOutline className="inline" />,
+      description: "Planet radius:",
+      data: exoplanet.planet_radius,
+    },
+    {
+      icon: <IoSearch className="inline" />,
+      description: "Discovery method:",
+      data: exoplanet.discovery_method,
+    },
+    {
+      icon: <TbWeight className="inline" />,
+      description: "Planet mass:",
+      data: exoplanet.planet_mass,
+    },
+    {
+      icon: <MdDateRange className="inline" />,
+      description: "Discovery date:",
+      data: exoplanet.discovery_date,
+    },
+    {
+      icon: <LuOrbit className="inline" />,
+      description: "Orbital radius:",
+      data: exoplanet.orbital_radius,
+    },
+    {
+      icon: <IoSpeedometerOutline className="inline" />,
+      description: "Orbital period:",
+      data: exoplanet.orbital_period,
+    },
+    {
+      icon: <TbArrowCurveLeft className="inline" />,
+      description: "Eccentricity:",
+      data: exoplanet.eccentricity,
+    },
+  ];
+
   return (
-    <div className={`flex flex-col w-full bg-[#1c1b1d] gap-14`}>
+    <div className="flex flex-col w-full  gap-14 pb-[150px]">
       <div className="relative">
         <Image
           className="w-full h-[350px] object-cover"
@@ -45,77 +82,35 @@ export default function page() {
           height={300}
         />
 
-        <div class="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#1c1b1d] to-transparent"></div>
-        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#1c1b1d] to-transparent"></div>
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#1c1b1d] to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#1c1b1d] to-transparent"></div>
       </div>
 
       <div className="flex flex-row ">
-        <div className="flex flex-col  gap-10 items-center w-1/2">
+        <div className="flex flex-col gap-10 items-center w-1/2">
           <h1 className="text-[50px] font-light">{exoplanet.nombre}</h1>
           <p className="break-words w-[420px] font-light text-[16px]">
             {exoplanet.description}
           </p>
         </div>
 
-        <ul className="grid grid-cols-3  gap-6 ">
-          <li className="flex flex-col gap-1 mx-auto px-8 ">
-            <span className="text-center text-[26px] font-light">
-              <IoPlanetOutline className="inline" /> Planet radius:{" "}
-            </span>
-            <span className="text-center text-[20px] font-light ">
-              {exoplanet.planet_radius}
-            </span>
-          </li>
-          <li className="flex flex-col gap-1 mx-auto px-8">
-            <span className="text-center text-[26px] font-light">
-              <IoSearch className="inline" /> Discovery method:
-            </span>
-            <span className="text-center text-[20px] font-light">
-              {exoplanet.discovery_method}
-            </span>
-          </li>
-          <li className="flex flex-col gap-1 mx-auto px-8">
-            <span className="text-center text-[26px] font-light">
-              <TbWeight className="inline" /> Planet mass:
-            </span>
-            <span className="text-center text-[20px] font-light">
-              {exoplanet.planet_mass}
-            </span>
-          </li>
-          <li className="flex flex-col gap-1 mx-auto px-8">
-            <span className="text-center text-[26px] font-light">
-              <MdDateRange className="inline" /> Discovery date:
-            </span>
-            <span className="text-center text-[20px] font-light">
-              {exoplanet.discovery_date}
-            </span>
-          </li>
-          <li className="flex flex-col gap-1 mx-auto px-8">
-            <span className="text-center text-[26px] font-light">
-              <LuOrbit className="inline" /> Orbital radius:
-            </span>
-            <span className="text-center text-[20px] font-light">
-              {exoplanet.orbital_radius}
-            </span>
-          </li>
-          <li className="flex flex-col gap-1 mx-auto px-8">
-            <span className="text-center text-[26px] font-light">
-              <IoSpeedometerOutline className="inline" /> Orbital period:
-            </span>
-            <span className="text-center text-[20px] font-light">
-              {exoplanet.orbital_period}
-            </span>
-          </li>
-          <li className="flex flex-col gap-1 mx-auto px-8">
-            <span className="text-center text-[26px] font-light">
-              <TbArrowCurveLeft className="inline" /> Eccentricity:
-            </span>
-            <span className="text-center text-[20px] font-light">
-              {exoplanet.eccentricity}
-            </span>
-          </li>
+        <ul className="w-[45%] grid grid-cols-3 gap-0 relative top-[16px]">
+          {dataToShow.map((data, index) => (
+            <ShowData key={index} data={data} />
+          ))}
         </ul>
       </div>
     </div>
+  );
+}
+
+function ShowData({ data }) {
+  return (
+    <li className="flex flex-col gap-1 mx-auto px-8">
+      <span className="text-center text-[22px] font-light">
+        {data.icon} {data.description}
+      </span>
+      <span className="text-center text-[16px] font-light">{data.data}</span>
+    </li>
   );
 }
