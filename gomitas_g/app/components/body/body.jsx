@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonStarted from "../ui/ButtonStarted";
+import Image from "next/image";
 
 import { TfiWrite } from "react-icons/tfi";
 import { MdOutlineSchool } from "react-icons/md";
@@ -26,6 +27,12 @@ const inicio = [
   {
     img: "/image1.jpg",
   },
+];
+
+const startedLanding = [
+  { img: "/Started-BG.jpg"}, 
+  { img: "/Started-BG2.jpg"}, 
+  { img: "/image1.jpg" },
 ];
 
 const exoplanetas = [
@@ -104,18 +111,18 @@ export default function Body() {
             Get started with your knowledge about Exo-Planets now with our
             Collection about <br /> Exo-Planets serched from confident sources.
           </p>
-          <div className="flex justify-center m-4">
+          <div className="flex justify-center m-4 p-5">
             <ButtonStarted />
           </div>
         </div>
-        <div className="flex justify-between mb-8">
-          {inicio.map(
+        <div className="flex mb-8">
+          {startedLanding.map(
             (
               inicio,
               index // Agregado 'index' como segundo argumento
             ) => (
-              <div key={index} className="w-1/3 flex flex-col items-center m-4">
-                <img src={inicio.img} alt="ESO" />
+              <div key={index} className="w-1/3 flex flex-col items-center">
+                <Image className="rounded-lg" src={inicio.img} alt="ESO" width={300} height={300}/>
               </div>
             )
           )}
