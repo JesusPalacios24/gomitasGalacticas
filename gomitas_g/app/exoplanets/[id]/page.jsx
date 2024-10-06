@@ -1,7 +1,15 @@
 import React from "react";
 import Image from "next/image";
 
-import { IoPlanetOutline,IoSpeedometerOutline,IoSearch } from "react-icons/io5";
+// import { Inter } from '@next/font/google';
+
+// const inter = Inter({ subsets: ['latin'] });
+
+import {
+  IoPlanetOutline,
+  IoSpeedometerOutline,
+  IoSearch,
+} from "react-icons/io5";
 import { MdDateRange } from "react-icons/md";
 import { TbWeight } from "react-icons/tb";
 import { LuOrbit } from "react-icons/lu";
@@ -26,46 +34,88 @@ export default function page() {
     eccentricity: 0.01,
   };
 
-  //   let exo2 = {
-  //     name: "51 Pegasi b",
-  //     description:
-  //       "51 Pegasi b is a gas giant exoplanet that orbits a G-type star. Its mass is 0.46 Jupiters, it takes 4.2 days to complete one orbit of its star, and is 0.0527 AU from its star. Its discovery was announced in 1995.",
-  //     planet_radius: "1.27 x Jupiter (estimate)",
-  //     planet_type: "Gas Giant",
-  //     discovery_method: "Radial Velocity",
-  //     planet_mass: "0.46 Jupiters",
-  //     discovery_date: 1995,
-  //     orbital_radius: "0.0527 AU",
-  //     orbital_period: "4.2 days",
-  //     eccentricity: 0.01,
-  //   };
-
   return (
-    <div className="flex flex-col w-[70%] mx-auto gap-y-20">
-      <div className="flex flex-row gap-x-20">
+    <div className={`flex flex-col w-full bg-[#1c1b1d] gap-14`}>
+      <div className="relative">
         <Image
+          className="w-full h-[350px] object-cover"
           src={exoplanet.image}
           alt="Descripción de la imagen"
           width={600}
           height={300}
         />
-        <div className="flex flex-col items-center">
-          <p>{exoplanet.nombre}</p>
-          <span className="break-words w-[420px]">{exoplanet.description}</span>
-        </div>
+
+        <div class="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#1c1b1d] to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#1c1b1d] to-transparent"></div>
       </div>
-      <ul className="grid grid-cols-3 w-full gap-6">
-        <li className="">
-          <IoPlanetOutline className="inline" /> Planet radius:{" "}
-          {exoplanet.planet_radius}
-        </li>
-        <li><IoSearch className="inline"/>Discovery method:{exoplanet.discovery_method}</li>
-        <li><TbWeight className="inline"/>Planet mass {exoplanet.planet_mass}</li>
-        <li><MdDateRange className="inline"></MdDateRange> Discovery date{exoplanet.discovery_date}</li>
-        <li><LuOrbit className="inline"></LuOrbit> Orbital radius: {exoplanet.orbital_radius}</li>
-        <li><IoSpeedometerOutline className="inline"/>Orbital period:{exoplanet.orbital_period}</li>
-        <li><TbArrowCurveLeft className="inline"/>Eccentricity: {exoplanet.eccentricity}</li>
-      </ul>
+
+      <div className="flex flex-row ">
+        <div className="flex flex-col  gap-10 items-center w-1/2">
+          <h1 className="text-[50px] font-light">{exoplanet.nombre}</h1>
+          <p className="break-words w-[420px] font-light text-[16px]">
+            {exoplanet.description}
+          </p>
+        </div>
+
+        <ul className="grid grid-cols-3  gap-6 ">
+          <li className="flex flex-col gap-1 mx-auto px-8 ">
+            <span className="text-center text-[26px] font-light">
+              <IoPlanetOutline className="inline" /> Planet radius:{" "}
+            </span>
+            <span className="text-center text-[20px] font-light ">
+              {exoplanet.planet_radius}
+            </span>
+          </li>
+          <li className="flex flex-col gap-1 mx-auto px-8">
+            <span className="text-center text-[26px] font-light">
+              <IoSearch className="inline" /> Discovery method:
+            </span>
+            <span className="text-center text-[20px] font-light">
+              {exoplanet.discovery_method}
+            </span>
+          </li>
+          <li className="flex flex-col gap-1 mx-auto px-8">
+            <span className="text-center text-[26px] font-light">
+              <TbWeight className="inline" /> Planet mass:
+            </span>
+            <span className="text-center text-[20px] font-light">
+              {exoplanet.planet_mass}
+            </span>
+          </li>
+          <li className="flex flex-col gap-1 mx-auto px-8">
+            <span className="text-center text-[26px] font-light">
+              <MdDateRange className="inline" /> Discovery date:
+            </span>
+            <span className="text-center text-[20px] font-light">
+              {exoplanet.discovery_date}
+            </span>
+          </li>
+          <li className="flex flex-col gap-1 mx-auto px-8">
+            <span className="text-center text-[26px] font-light">
+              <LuOrbit className="inline" /> Orbital radius:
+            </span>
+            <span className="text-center text-[20px] font-light">
+              {exoplanet.orbital_radius}
+            </span>
+          </li>
+          <li className="flex flex-col gap-1 mx-auto px-8">
+            <span className="text-center text-[26px] font-light">
+              <IoSpeedometerOutline className="inline" /> Orbital period:
+            </span>
+            <span className="text-center text-[20px] font-light">
+              {exoplanet.orbital_period}
+            </span>
+          </li>
+          <li className="flex flex-col gap-1 mx-auto px-8">
+            <span className="text-center text-[26px] font-light">
+              <TbArrowCurveLeft className="inline" /> Eccentricity:
+            </span>
+            <span className="text-center text-[20px] font-light">
+              {exoplanet.eccentricity}
+            </span>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
