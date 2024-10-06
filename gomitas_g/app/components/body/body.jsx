@@ -75,7 +75,7 @@ export default function Body() {
         </div>
       </div>
 
-      <div className="h-screen w-full py-[160px] my-[100px]">
+      <div className="h-screen w-full  my-[120px]">
         {" "}
         {/* Segunda división: 3 bloques con imagen e info */}
         <div className="text-center mb-[70px]">
@@ -133,7 +133,7 @@ export default function Body() {
         {exoplanetas.map(
           (
             exop,
-            index // Agregado 'index' como segundo argumento
+            index // Agregado 'index' como segundo argumento 
           ) => (
             <div key={index} className="w-[50%] justify-center m-4 ">
               <h3 className="flex justify-center m-4 text-h3">{exop.titEx}</h3>
