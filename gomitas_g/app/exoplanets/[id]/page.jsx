@@ -1,5 +1,8 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+
+import exoplanets from '../../exoplanets'
 
 // import { Inter } from '@next/font/google';
 
@@ -14,24 +17,19 @@ import { MdDateRange } from "react-icons/md";
 import { TbWeight, TbArrowCurveLeft } from "react-icons/tb";
 import { LuOrbit } from "react-icons/lu";
 
-export default function Page() {
-  let exoplanet = {
-    id: 1,
-    image:
-      "https://th.bing.com/th/id/R.0a375cff18d2bee68f113e933257f693?rik=OYtoBYWSdIbnoA&pid=ImgRaw&r=0",
-    clasification: "clasificacion",
-    nombre: "Exoplaneta ur mom",
-    description:
-      "texto de exoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipkl",
-    planet_radius: "1.27 x Jupiter (estimate)",
-    planet_type: "Gas Giant",
-    discovery_method: "Radial Velocity",
-    planet_mass: "0.46 Jupiters",
-    discovery_date: 1995,
-    orbital_radius: "0.0527 AU",
-    orbital_period: "4.2 days",
-    eccentricity: 0.01,
-  };
+export default function Page({params}) {
+
+  const [exoplanet,setExoplanet] =useState({})
+useEffect(() => {
+  const planetFinded=exoplanets.find(planet=>planet.id==params.id)
+  console.log(planetFinded)
+  setExoplanet((prevExoplanet) => ({
+    ...prevExoplanet,   // Mantén las propiedades anteriores
+    ...planetFinded     // Agrega las propiedades de planetFinded
+  }));
+},[])
+
+console.log(exoplanet)
 
   const dataToShow = [
     {
@@ -68,7 +66,7 @@ export default function Page() {
       icon: <TbArrowCurveLeft className="inline" />,
       description: "Eccentricity:",
       data: exoplanet.eccentricity,
-    },
+    }, 
   ];
 
   return (
@@ -88,7 +86,7 @@ export default function Page() {
 
       <div className="flex flex-row ">
         <div className="flex flex-col gap-10 items-center w-1/2">
-          <h1 className="text-[50px] font-light">{exoplanet.nombre}</h1>
+          <h1 className="text-[50px] font-light">{exoplanet.name}</h1>
           <p className="break-words w-[420px] font-light text-[16px]">
             {exoplanet.description}
           </p>
