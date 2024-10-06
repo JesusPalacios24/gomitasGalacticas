@@ -1,6 +1,8 @@
 import React from "react";
 import ExoplanetCard from "../components/ui/ExoplanetCard";
 
+import {Button} from '@nextui-org/button';
+
 let exoplanets = [
   {
     id: 1,
@@ -88,6 +90,11 @@ export default function page() {
           <ExoplanetCard data={exoplanet} key={index}></ExoplanetCard>
         ))}
       </div>
+
+
+      {/* <p className="text-rose-500">aaa</p>
+      <Button>Click me</Button> */}
+      
     </div>
   );
 }
