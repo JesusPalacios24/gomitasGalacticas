@@ -10,7 +10,7 @@ export default function Footer() {
           <h3 className="text-h3 font-thin">ExoFinder</h3>
           {/* Pie de página con derechos reservados */}
           <div className="text-zinc-500 text-xs mt-2">
-            &copy; 2024 Space Exploration Co. All Rights Reserved.
+            &copy; 2024 ExoFinder Co. All Rights Reserved.
           </div>
         </div>
 
