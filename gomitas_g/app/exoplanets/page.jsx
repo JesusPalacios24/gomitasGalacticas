@@ -1,7 +1,9 @@
 import React from "react";
 import ExoplanetCard from "../components/ui/ExoplanetCard";
 
-import {Button} from '@nextui-org/button';
+import { Checkbox, Input } from "@nextui-org/react";
+
+import { Button } from "@nextui-org/button";
 
 let exoplanets = [
   {
@@ -11,7 +13,7 @@ let exoplanets = [
     clasification: "clasificacion",
     name: "Exoplaneta ur mom",
     description:
-      "texto de exoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipkl",
+      "exoplan etavy fghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipklexoplanetavyfghyujikopijnhbgvfhtuygijokpojmnbvcgtyuoipkl",
     data: {
       // size: number,
       // temperatura: number,
@@ -83,18 +85,71 @@ let exoplanets = [
 
 export default function page() {
   return (
-    <div className="w-[70%] m-auto">
-      <h1 className="font-semibold mb-20 text-[36px]">Exoplanets</h1>
-      <div className="grid grid-cols-3 gap-y-12">
-        {exoplanets.map((exoplanet, index) => (
-          <ExoplanetCard data={exoplanet} key={index}></ExoplanetCard>
-        ))}
-      </div>
+    <div className="flex flex-col gap-12">
+      <h1 className="font-semibold text-[36px] text-center mr-10">Exoplanets</h1>
 
+      <Input
+        className="w-[30%] m-auto "
+        type="text"
+        // placeholder="Search for exoplanets..."
+
+        label="Search for exoplanets..."
+        // labelPlacement="outside-left"
+        // description="outside-left"
+      />
+
+      <div className="flex flex-row justify-between mx-32">
+        <div className="flex flex-col gap-3 bg-white text-black h-full px-20 py-14 rounded-[40px]">
+          <p className="font-semibold text-center text-lg">Filters</p>
+
+          {/* aqui los filtros hagan su desmadre */}
+          <ul className="flex flex-col">
+            <li>
+              {" "}
+              <Checkbox color="default" radius="none">
+                Default
+              </Checkbox>{" "}
+              Fent
+            </li>
+            <li>
+              {" "}
+              <Checkbox color="default" radius="none">
+                Default
+              </Checkbox>
+              Size
+            </li>
+            <li>
+              {" "}
+              <Checkbox color="default" radius="none">
+                Default
+              </Checkbox>{" "}
+              Asa
+            </li>
+            <li>
+              {" "}
+              <Checkbox color="default" radius="none">
+                Default
+              </Checkbox>{" "}
+              Asa
+            </li>
+            <li>
+              {" "}
+              <Checkbox color="default" radius="none">
+                Default
+              </Checkbox>{" "}
+              Asa
+            </li>
+          </ul>
+        </div>
+        <div className="grid grid-cols-3 gap-x-8 gap-y-12">
+          {exoplanets.map((exoplanet, index) => (
+            <ExoplanetCard data={exoplanet} key={index}></ExoplanetCard>
+          ))}
+        </div>
+      </div>
 
       {/* <p className="text-rose-500">aaa</p>
       <Button>Click me</Button> */}
-      
     </div>
   );
 }
