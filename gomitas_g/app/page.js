@@ -1,11 +1,10 @@
 import React from 'react'
+import Body from './components/body/body'
 
-import ButtonStarted from './components/ui/ButtonStarted'
-
-export default function page() {
+export default function Home() {
   return (
     <div>
-      <ButtonStarted></ButtonStarted>
+      <Body />
     </div>
   )
 }
